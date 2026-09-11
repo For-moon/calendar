@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "name": "Y2C.ics",
+      "url": "ics/Y2C.ics"
+    },
+    {
+      "name": "TKB-QLDT20261.ics",
+      "url": "ics/TKB-QLDT20261.ics"
+    }
+  ],
+  "default_mode": "week",
+  "auto_sync": true
+}

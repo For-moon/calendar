@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thời Khóa Biểu Sinh Viên</title>
+
+  <!-- PWA & Mobile Capabilities -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1B2430">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TKB">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Classic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Classic Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Top Brand Band -->
+  <div class="brand-band">
+    <div class="brand-row">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <div class="ics-picker" id="ics-picker">
+          <button class="ics-picker-btn" id="ics-picker-btn" type="button" title="Chọn file thời khóa biểu">
+            <span class="ics-picker-name" id="current-ics-name">Đang tải...</span>
+            <span class="ics-picker-arrow">&#9662;</span>
+          </button>
+          <div class="ics-picker-menu" id="ics-picker-menu" style="display: none;"></div>
+        </div>
+      </div>
+      <span class="brand-tag" id="status-tag">Đang tải...</span>
+    </div>
+  </div>
+
+  <!-- Tear Strip Accent -->
+  <div class="tear-strip"></div>
+
+  <!-- Calendar View -->
+  <section id="view-calendar" style="display: flex;">
+    <div class="toolbar">
+      <div class="tb-left">
+        <button class="nav-btn" id="btn-prev" title="Trước">‹</button>
+        <button class="nav-btn" id="btn-next" title="Sau">›</button>
+        <div class="month-heading display" id="month-heading">...</div>
+      </div>
+      <div class="tb-right">
+        <button class="btn btn-ghost btn-sm" id="btn-today">Hôm nay</button>
+        <div class="segmented">
+          <button id="seg-month" class="active">Lịch</button>
+          <button id="seg-week">Tuần</button>
+          <button id="seg-agenda">Danh sách</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="dot"></span>Học thường</span>
+      <span class="legend-item"><span class="dot cat-midterm"></span>Thi giữa học phần</span>
+      <span class="legend-item"><span class="dot cat-practical"></span>Thực hành</span>
+      <span class="legend-item"><span class="dot cat-final"></span>Thi cuối học phần</span>
+      <span class="legend-item"><span class="dot cat-holiday"></span>Nghỉ lễ</span>
+    </div>
+
+    <div class="content-pad">
+      <!-- Month Grid -->
+      <div class="card" id="month-view" style="display: block;">
+        <div class="weekday-row">
+          <div>T2</div><div>T3</div><div>T4</div><div>T5</div><div>T6</div><div>T7</div><div class="sun">CN</div>
+        </div>
+        <div class="month-grid" id="month-grid"></div>
+      </div>
+
+      <!-- Week Grid -->
+      <div class="card" id="week-view" style="display: none;">
+        <div class="week-grid" id="week-grid"></div>
+      </div>
+
+      <!-- Agenda List -->
+      <div class="card" id="agenda-view" style="display: none;">
+        <div class="agenda-list" id="agenda-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Details -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-date" id="modal-date"></div>
+        <button class="modal-close" id="modal-close">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="app-foot">Thời Khóa Biểu Sinh Viên</footer>
+
+</div>
+
+<!-- Core Scripts -->
+<script src="js/ics_parser.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

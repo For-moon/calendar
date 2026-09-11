@@ -1,0 +1,26 @@
+{
+  "name": "Thời Khóa Biểu Sinh Viên",
+  "short_name": "TKB",
+  "description": "Ứng dụng xem thời khóa biểu nhanh, hỗ trợ xem offline, nạp file .ics và tự động đồng bộ.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F4EC",
+  "theme_color": "#1C2530",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
